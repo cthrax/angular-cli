@@ -8,6 +8,9 @@
 /node_modules
 /bower_components
 
+# IDEs and editors
+/.idea
+
 # misc
 /.sass-cache
 /connect.lock
@@ -15,3 +18,9 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+

@@ -9,17 +9,23 @@ import {
   TestComponentBuilder,
   beforeEachProviders
 } from 'angular2/testing';
-import {provide} from 'angular2/core';
+import {provide, Component} from 'angular2/core';
 import {<%= classifiedModuleName %>} from './<%= dasherizedModuleName %>';
 
 
-describe('<%= classifiedModuleName %> Component', () => {
+@Component({
+  selector: 'test-component',
+  template: `<div <%= dasherizedModuleName %>></div>`
+})
+class TestComponent {}
 
-  beforeEachProviders(() => []);
+describe('<%= classifiedModuleName %> Directive', () => {
+
+  beforeEachProviders((): any[] => []);
 
 
   it('should ...', injectAsync([TestComponentBuilder], (tcb:TestComponentBuilder) => {
-    return tcb.createAsync(<%= classifiedModuleName %>).then((fixture) => {
+    return tcb.createAsync(TestComponent).then((fixture) => {
       fixture.detectChanges();
     });
   }));
